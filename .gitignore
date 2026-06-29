@@ -1,0 +1,32 @@
+# ── Données volumineuses ───────────────────────────────
+*.csv
+*.xlsx
+*.parquet
+# (gardez vos données brutes hors du dépôt ; versionnez plutôt un échantillon
+#  ou documentez la source dans data/raw/. Forcez un ajout avec `git add -f` si besoin.)
+
+# ── LaTeX temporaire ───────────────────────────────────
+*.aux
+*.log
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex.gz
+
+# ── Python ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# ── R ──────────────────────────────────────────────────
+.Rhistory
+.RData
+.Rproj.user/
+
+# ── macOS ──────────────────────────────────────────────
+.DS_Store

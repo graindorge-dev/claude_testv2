@@ -1,0 +1,86 @@
+% ============================================================
+%  Modèle de départ Overleaf — ARS v3.13.0
+%  Langue de l'article : English (per user preferences)
+% ============================================================
+\documentclass[12pt]{article}
+
+% --- Encoding & language --------------------------------------
+\usepackage[utf8]{inputenc}     % UTF-8 source encoding
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}      % article language = English
+
+% --- Layout: 2.5cm margins, double spacing --------------------
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\doublespacing
+
+% --- Required packages ----------------------------------------
+\usepackage{graphicx}   % figures
+\usepackage{float}      % [H] float placement
+\usepackage{booktabs}   % publication-quality tables
+\usepackage{hyperref}   % clickable links / refs
+\usepackage[round]{natbib} % author-year citations
+
+\title{Your Paper Title Here}
+\author{Author Name\\ \small Affiliation, email@institution}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+%  IMRaD structure (Introduction, Methods, Results, Discussion)
+% ============================================================
+
+\begin{abstract}
+% A 150–250 word summary: context, gap, method, key result, contribution.
+\end{abstract}
+
+\section{Introduction}
+% Background, problem statement, research question, and contribution.
+% Example citation: prior work shows X \citep{smith2023}.
+
+\section{Methods}
+% Data, materials, procedure, and analysis — enough detail to reproduce.
+
+\section{Results}
+% Findings only (no interpretation). Reference figures and tables.
+
+% --- Example: inserting a figure from ../../figures/ ----------
+% IMPORTANT: reference the PNG version (300 dpi) for portability.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{../../figures/png/example_figure.png}
+    \caption{Short, self-contained caption describing the figure.}
+    \label{fig:example}
+\end{figure}
+% (A vector .svg twin lives in ../../figures/svg/ for publication.)
+
+% --- Example: a simple booktabs table ------------------------
+\begin{table}[H]
+    \centering
+    \caption{Example table.}
+    \label{tab:example}
+    \begin{tabular}{lcc}
+        \toprule
+        Condition & Mean & SD \\
+        \midrule
+        A & 0.00 & 0.00 \\
+        B & 0.00 & 0.00 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Discussion}
+% Interpretation, limitations, implications, and future work.
+
+\section{Conclusion}
+% One paragraph: what was learned and why it matters.
+
+% ============================================================
+%  Bibliography
+% ============================================================
+\bibliographystyle{apalike}
+\bibliography{exemple}
+
+\end{document}
