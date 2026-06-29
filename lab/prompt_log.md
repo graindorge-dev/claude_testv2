@@ -36,4 +36,11 @@
 **Fichiers modifiés :** articles/citylogistics2027_lockers_larochelle.md, outputs/latex/citylogistics2027_extended_abstract.tex, outputs/word/citylogistics2027_extended_abstract.docx (figure embarquée)
 
 ---
+
+## 2026-06-29 — Ajout du volet foncier micro-hubs (Figure 2 + texte)
+**Prompt :** Cartographie mise à jour avec le foncier compatible micro-hubs (DATA/Parkings.xlsx + notebook) + rapport VerDelivery DOCX ; figure et texte anglais pour la conf.
+**Résultat :** 95 parkings classés par compatibilité véhicules (74 surface ≥3 m = candidats micro-hub, 9 conditionnels, 12 ouvrages exclus ; Espace Encan = pilote). Figure 2 générée (SVG+PNG 300 dpi). Article enrichi (abstract, méthode P3, résultats « Land for consolidation », discussion, table) via le pipeline academic-paper. LaTeX + DOCX régénérés (2 figures embarquées).
+**Fichiers produits/modifiés :** figures/png|svg/larochelle_microhub_parkings.*, code/make_microhub_map.py, data/raw/Parkings.xlsx, articles/…md, outputs/latex/…tex, outputs/word/…docx
+
+---
 *(Les prochains échanges seront ajoutés ici automatiquement)*
