@@ -32,8 +32,8 @@
 
 ## 2026-06-29 — Bascule de la rédaction sur le pipeline ARS
 **Prompt :** « Utilise bien les agents et skills du pipeline ARS, notamment pour la rédaction. »
-**Résultat :** (en cours) Reprise de la rédaction de l'extended abstract via le skill academic-paper d'ARS, intégration de la figure.
-**Fichiers :** (à venir)
+**Résultat :** Extended abstract v2 produit via le pipeline academic-paper (intake → structure → argument → draft → citation_compliance → peer_reviewer → formatter). Titre retravaillé, figure intégrée (md + LaTeX + DOCX), statements ajoutés (Data availability, CRediT, AI disclosure), anti-patterns ARS appliqués, auto-revue 5 dimensions. Références externes [verify], aucun DOI fabriqué.
+**Fichiers modifiés :** articles/citylogistics2027_lockers_larochelle.md, outputs/latex/citylogistics2027_extended_abstract.tex, outputs/word/citylogistics2027_extended_abstract.docx (figure embarquée)
 
 ---
 *(Les prochains échanges seront ajoutés ici automatiquement)*
