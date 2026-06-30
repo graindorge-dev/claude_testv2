@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="580" viewBox="0 0 820 580">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="580" fill="#f8f9fa" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="28" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">
+    Locker Sites and Micro-Hub Candidates — La Rochelle
+  </text>
+  <text x="410" y="45" text-anchor="middle" font-size="10" fill="#555">
+    Field survey: 148 collection points · 10 PT-anchored proposed sites · 95 car parks classified (EIGSI 2024–2026)
+  </text>
+
+  <!-- Ocean (west) -->
+  <ellipse cx="120" cy="310" rx="110" ry="180" fill="#d0e8f5" opacity="0.5"/>
+  <text x="80" y="310" font-size="11" fill="#2d6a8f" text-anchor="middle" transform="rotate(-10,80,310)">Atlantic</text>
+  <text x="80" y="325" font-size="11" fill="#2d6a8f" text-anchor="middle" transform="rotate(-10,80,325)">Ocean</text>
+
+  <!-- City boundary (approximate) -->
+  <ellipse cx="430" cy="330" rx="240" ry="200" fill="none" stroke="#aaa" stroke-dasharray="6,4" stroke-width="1.5"/>
+  <text x="650" y="180" font-size="9" fill="#888">CdA boundary (approx.)</text>
+
+  <!-- Yélo PT network (schematic lines) -->
+  <polyline points="230,200 300,220 380,240 460,230 560,210 620,195" 
+            fill="none" stroke="#e8a838" stroke-width="2" opacity="0.6"/>
+  <polyline points="240,300 320,290 400,285 480,295 580,310 640,320" 
+            fill="none" stroke="#e8a838" stroke-width="2" opacity="0.6"/>
+  <polyline points="300,180 330,240 350,310 330,380 310,440" 
+            fill="none" stroke="#e8a838" stroke-width="2" opacity="0.6"/>
+  <polyline points="440,230 450,300 460,380 480,440 510,490" 
+            fill="none" stroke="#e8a838" stroke-width="2" opacity="0.6"/>
+  <text x="645" y="195" font-size="8" fill="#c4831a">Yélo network</text>
+
+  <!-- Demand zones (background circles) -->
+  <circle cx="370" cy="290" r="45" fill="#ff6b6b" opacity="0.12"/>
+  <circle cx="530" cy="390" r="38" fill="#ff6b6b" opacity="0.10"/>
+
+  <text x="370" y="352" text-anchor="middle" font-size="8" fill="#c0392b" font-style="italic">Centre Marché ~510 colis/sem</text>
+  <text x="530" y="452" text-anchor="middle" font-size="8" fill="#c0392b" font-style="italic">Mireuil ~285 colis/sem</text>
+  <rect x="374" y="284" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="414" y="304" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="444" y="274" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="494" y="314" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="474" y="254" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="404" y="334" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="454" y="344" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="524" y="374" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <rect x="384" y="264" width="12" height="12" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <polygon points="440,218 447,227 452,230 447,233 440,242 433,233 428,230 433,227" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="440" y="214" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Gare SNCF</text>
+  <polygon points="360,258 367,267 372,270 367,273 360,282 353,273 348,270 353,267" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="360" y="254" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Pl. de Verdun</text>
+  <polygon points="580,188 587,197 592,200 587,203 580,212 573,203 568,200 573,197" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="580" y="184" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Campus Univ.</text>
+  <polygon points="560,218 567,227 572,230 567,233 560,242 553,233 548,230 553,227" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="560" y="214" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Résidences Univ.</text>
+  <polygon points="520,388 527,397 532,400 527,403 520,412 513,403 508,400 513,397" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="520" y="384" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Mireuil Centre</text>
+  <polygon points="300,168 307,177 312,180 307,183 300,192 293,183 288,180 293,177" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="300" y="164" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Laleu Nord</text>
+  <polygon points="290,328 297,337 302,340 297,343 290,352 283,343 278,340 283,337" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="290" y="324" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Les Minimes</text>
+  <polygon points="600,298 607,307 612,310 607,313 600,322 593,313 588,310 593,307" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="600" y="294" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Beaulieu</text>
+  <polygon points="540,438 547,447 552,450 547,453 540,462 533,453 528,450 533,447" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="540" y="434" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Villeneuve</text>
+  <polygon points="240,288 247,297 252,300 247,303 240,312 233,303 228,300 233,297" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="240" y="284" text-anchor="middle" font-size="8" fill="#1a5276" font-weight="bold">Chef de Baie</text>
+  <polygon points="320,294 335,305 329,323 311,323 305,305" fill="#e74c3c" stroke="#922b21" stroke-width="2"/>
+  <text x="320" y="338" text-anchor="middle" font-size="8" fill="#922b21" font-weight="bold">Espace Encan</text>
+  <text x="320" y="348" text-anchor="middle" font-size="8" fill="#922b21" font-weight="bold">(pilote VerDelivery)</text>
+  <polygon points="430.0,204.0 420.5,209.5 420.5,220.5 430.0,226.0 439.5,220.5 439.5,209.5" fill="#f39c12" stroke="#d35400" stroke-width="1.5"/>
+  <text x="430" y="235" text-anchor="middle" font-size="8" fill="#784212">Quartier Gare/</text>
+  <text x="430" y="245" text-anchor="middle" font-size="8" fill="#784212">SERNAM</text>
+  <polygon points="560.0,379.0 550.5,384.5 550.5,395.5 560.0,401.0 569.5,395.5 569.5,384.5" fill="#f39c12" stroke="#d35400" stroke-width="1.5"/>
+  <text x="560" y="410" text-anchor="middle" font-size="8" fill="#784212">Zone Mireuil</text>
+  <text x="560" y="420" text-anchor="middle" font-size="8" fill="#784212">Est</text>
+  <polygon points="220.0,279.0 210.5,284.5 210.5,295.5 220.0,301.0 229.5,295.5 229.5,284.5" fill="#f39c12" stroke="#d35400" stroke-width="1.5"/>
+  <text x="220" y="310" text-anchor="middle" font-size="8" fill="#784212">Pôle Ouest</text>
+  <line x1="340" y1="305" x2="435" y2="230" stroke="#e74c3c" stroke-width="1.5" 
+        stroke-dasharray="5,3" marker-end="url(#arrow)" opacity="0.7"/>
+  <text x="385" y="260" font-size="8" fill="#e74c3c" transform="rotate(-35,385,260)">cargo-bike</text>
+
+  <!-- Legend box -->
+  <rect x="22" y="382" width="185" height="155" fill="white" stroke="#ccc" stroke-width="1" rx="5" opacity="0.9"/>
+  <text x="30" y="396" font-size="9" font-weight="bold" fill="#333">Legend</text>
+
+  <rect x="30" y="405" width="11" height="11" fill="#95a5a6" stroke="#7f8c8d" stroke-width="1" rx="2"/>
+  <text x="46" y="414" font-size="9" fill="#333">Existing APL (n=9)</text>
+
+  <polygon points="35,423 41,429 35,435 29,429" fill="#2980b9" stroke="#1a5276" stroke-width="1"/>
+  <text x="46" y="433" font-size="9" fill="#333">Proposed PT-anchored site (n=10)</text>
+
+  <polygon points="35,443 44,449 40,460 30,460 26,449" fill="#e74c3c" stroke="#922b21" stroke-width="1.5"/>
+  <text x="46" y="455" font-size="9" fill="#333">Micro-hub pilot (Espace Encan)</text>
+
+  <polygon points="35,467 42,471 42,479 35,483 28,479 28,471" fill="#f39c12" stroke="#d35400" stroke-width="1"/>
+  <text x="46" y="477" font-size="9" fill="#333">Micro-hub candidate</text>
+
+  <line x1="30" y1="494" x2="42" y2="494" stroke="#e8a838" stroke-width="2" opacity="0.8"/>
+  <text x="46" y="497" font-size="9" fill="#333">Yélo PT network (schematic)</text>
+
+  <circle cx="35" cy="510" r="7" fill="#ff6b6b" opacity="0.35"/>
+  <text x="46" y="513" font-size="9" fill="#333">High-density demand zone</text>
+
+  <line x1="30" y1="526" x2="42" y2="526" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="46" y="529" font-size="9" fill="#333">Cargo-bike consolidation flow</text>
+
+  <!-- Source note -->
+  <text x="410" y="572" text-anchor="middle" font-size="8" fill="#888">
+    Source: EIGSI field survey 2024–26 · Interface Transport 2018/2024 · Yélo network data · Schematic representation
+  </text>
+</svg>

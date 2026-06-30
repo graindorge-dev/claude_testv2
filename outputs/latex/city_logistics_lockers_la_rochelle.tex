@@ -5,18 +5,19 @@
 \usepackage[top=2cm,bottom=2cm,left=1.8cm,right=1.8cm]{geometry}
 \usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
 \usepackage{hyperref}
 \usepackage{natbib}
 \usepackage{setspace}
 \setlength{\columnsep}{0.6cm}
 
 \title{\textbf{Parcel Lockers and Pickup Points in Urban Logistics:\\
-Location Criteria and Delivery Scheme Design\\
+Location Criteria and Delivery Scheme Design\\[-2pt]
 --- A Case Study of La Rochelle, France}}
 
-\author{[Author Names]\\
-\small EIGSI La Rochelle, France\\
-\small \texttt{[email@eigsi.fr]}}
+\author{T.~Graindorge \and C.~Fevre \and R.~David \and J.-P.~Samier\\
+\small EIGSI La Rochelle, France}
 
 \date{}
 
@@ -25,183 +26,200 @@ Location Criteria and Delivery Scheme Design\\
 \thispagestyle{empty}
 
 %% ─────────────────────────────────────────────
-\section*{Abstract}
-The rapid growth of e-commerce multiplies urban delivery addresses and failed
-delivery attempts. Parcel lockers and pickup points (PPPs) promise to consolidate
-remises and reduce last-kilometre costs. However, their net benefit depends on
-network design, upstream supply chain integration, and recipient access mode. This
-paper proposes a multicriteria location framework and an integrated delivery scheme
-(micro-hub + cargo cycles + PPPs) grounded in the scientific literature and applied
-to La Rochelle, France, using territorial diagnoses of 2018 and 2024. Key findings
-show that site performance is conditional on integration into existing travel chains,
-upstream consolidation via a micro-hub, and cross-operator sharing of infrastructure.
+\begin{abstract}
+Automated parcel lockers (APLs) are widely deployed to relieve the externalities
+of e-commerce last-mile delivery, yet their contribution to the wider urban freight
+system is decided less by the technology than by \emph{where} lockers are placed.
+This paper asks how locker siting reshapes the local urban logistics scheme of a
+mid-sized, geographically peripheral city. We pair a state-of-the-art review,
+grounded in two professional freight diagnostics of La Rochelle (France), with a
+real, multi-year experimentation drawn from three engineering field projects
+(2021--2026). A reproducible GIS multicriteria workflow, applied to 148 surveyed
+collection points, the public-transport network and population data, yields ten
+public-transport-anchored locker sites and exposes a coverage gap between locker
+supply and demand density. A companion land survey classifies 95~public car parks
+by goods-vehicle compatibility and identifies 74~surface sites suitable for
+micro-hub installation, showing that the land needed to anchor consolidation near
+demand is already available. Coupling locker siting with this consolidation
+foncier and cyclo-logistics produces an estimated 40\% CO$_2$ reduction over five
+years and a 44\% cut in truck-kilometres on a real carrier perimeter. We conclude
+that, for ``end-of-line'' cities, locker networks deliver system value only when
+co-designed with consolidation rather than deployed as stand-alone retail amenities.
+\end{abstract}
 
-\textbf{Keywords:} parcel lockers; pickup points; urban logistics; last-mile
-delivery; micro-hub; location optimisation; La Rochelle.
-
-%% ─────────────────────────────────────────────
-\section{Introduction}
-
-Home delivery failure rates of 10–30\% generate redundant trips and emissions.
-Parcel lockers and pickup points (PPPs) address this by consolidating deliveries at
-shared access points. Their net impact, however, depends on where they are placed and
-how they are supplied. This paper asks: (1) What criteria determine PPP location
-performance? (2) How should an integrated delivery scheme be designed for a
-medium-sized French city?
-
-We answer by synthesising the scientific literature and applying it to La Rochelle
-(Charente-Maritime, France, $\approx$80,000 inhabitants), drawing on flow data from
-a 2018 FRETURB-based freight diagnosis and spatial recommendations from a 2024
-logistics land study, both produced by Interface Transport for the Community of
-Agglomeration (CdA) of La Rochelle.
+\textbf{Keywords:} city logistics; automated parcel lockers; last-mile delivery;
+facility location; collection-and-delivery points; e-commerce; La Rochelle.
 
 %% ─────────────────────────────────────────────
-\section{State of the Art}
+\section{Introduction and Objective}
 
-\subsection{Consolidation Benefits}
+E-commerce has pushed B2C parcel flows into city centres faster than urban freight
+systems have adapted. Automated parcel lockers answer part of this problem: as
+unattended, out-of-home collection-and-delivery points, they consolidate many drops
+into one secured stop and let recipients collect along trips they already make.
 
-\citet{morganti2014} showed that relay points and lockers developed in France and
-Germany to reduce uncertainty from recipient absence. \citet{iwan2016} demonstrated
-density and productivity gains on the Polish InPost network. \citet{seghezzi2022}
-modelled lower delivery costs versus home delivery in urban contexts, driven by
-increased stop density.
+The value a locker network returns to the system, however, is fixed at the siting
+stage. A locker placed for real-estate convenience adds an asset without changing
+flows; one placed where demand, accessibility and the carrier network coincide
+restructures rounds, shifts collection out of the home, and creates the volume
+that makes consolidated, low-emission distribution viable. Evidence on this
+siting--impact link comes mostly from large metropolitan areas. Mid-sized,
+``end-of-line'' cities remain thinly documented, even though they face the same
+regulatory pressure to decarbonise.
 
-\subsection{Location as a Network Problem}
-
-\citet{deutsch2018} formalised the joint optimisation of number, location, and size
-of lockers. \citet{zhou2024} differentiated home-based users from commuters, showing
-that sites on existing travel chains generate less additional car traffic. \citet{castillo2024}
-demonstrated in Barcelona that micro-hub location and routing must be co-optimised
-for kilometre reduction.
-
-\subsection{User Accessibility}
-
-Acceptability depends on proximity, hours, security, and cycling/walking access
-\citep{kedia2017}. \citet{vakulenko2018} note that lockers transfer logistics work
-to the consumer. \citet{mehmood2022} found that $>$71\% of Nanjing locker sites
-were primarily car-accessible, flagging the limits of distance-only analysis.
-
-\subsection{Conditional Environmental Benefit}
-
-\citet{schnieder2021} show that the emission balance is sensitive to recipient travel
-mode. \citet{gutenschwager2024} stress adding operator tours and retrieval trips.
-\citet{silva2023}, reviewing 102 papers, confirm benefits in distance and failed
-deliveries but highlight dedicated car trips as a recurrent risk. \citet{ghazal2025},
-modelling Aachen, found that a combined scenario (electric vehicles + lockers +
-relays) reduced costs by $\geq$5.4\% and CO$_2$ by $\geq$61.1\%. \citet{pinchasik2025}
-corroborate cost, traffic, and emission reductions for expanded locker use in the
-Greater Oslo area.
-
-\subsection{Micro-Hubs and Cargo Cycles}
-
-\citet{katsela2022}, analysing 17 European and North American cases, show that
-micro-hubs are a family of transhipment interfaces whose success depends on
-stakeholder organisation and local context. They enable cargo-cycle distribution in
-dense zones, provided sufficient volume and cross-operator cooperation are secured.
+This paper addresses that gap: \textbf{how does locker siting reshape the local
+urban logistics scheme of a mid-sized city?} We answer it for La Rochelle (France),
+a coastal agglomeration of $\approx$170,000 inhabitants targeting carbon neutrality
+by 2040, with regulated city-centre delivery windows (06:00--11:00) and
+$\approx$14,000 students. The contribution is twofold: a transferable, data-driven
+siting method, and evidence that PT-anchored siting combined with consolidation
+reshapes --- not merely supplements --- the local scheme.
 
 %% ─────────────────────────────────────────────
-\section{Case Study: La Rochelle}
+\section{State of the Art and Local Context}
 
-\subsection{Territorial Context}
+\subsection{Locker Siting as a City-Logistics Scheme}
 
-La Rochelle is a mid-sized coastal city with a historic centre, a summer tourism
-peak, and a CdA of $\approx$200,000 inhabitants. The city has invested in cycling
-infrastructure and aims to reduce urban freight externalities.
+Locker location is a facility-location problem balancing coverage, demand density
+and multimodal accessibility against capital cost and the cannibalisation of
+existing relay points. The literature converges on a compact set of siting criteria:
+proximity to PT nodes and soft-mode networks, residential and footfall density, and
+insertion into daily mobility chains. Reported effects include re-delivery reductions
+of roughly 30\% and markedly lower per-parcel emissions than van home delivery
+\citep{iwan2016,deutsch2018,lachapelle2018}. PT-anchored pilots (Valencia, SPROUT;
+Paris, RATP--Pickup) concentrate carrier drops at one node while travellers collect
+en route.
 
-\subsection{2018 Freight Diagnosis}
+\subsection{The La Rochelle Freight System}
 
-The FRETURB model estimates \textbf{101,325 weekly B2B movements} across the CdA,
-of which \textbf{49,898} concern La Rochelle and \textbf{12,126} the city centre.
-E-commerce adds \textbf{25,300 weekly deliveries} at CdA level, $\approx$\textbf{2,000
-per week in the city centre}. Approximately \textbf{950 freight vehicles} access the
-city centre daily, covering $\approx$\textbf{8,640 km/day} (780 vehicles
-$<$3.5\,t; 170 heavy vehicles). Two demand poles emerge: the dense
-\textit{Centre~Marché} sector and the collective housing zone of
-\textit{Mireuil-Europe} \citep{interfacetransport2018}.
-
-\subsection{2024 Logistics Land Study}
-
-The 2024 study translates flows into spatial needs to 2040. It proposes a
-hierarchical network: peripheral urban distribution platforms, urban distribution
-spaces (EUD, 150\,m$^2$ to several thousand m$^2$) in the city core, and
-cycle-logistics hubs within 2\,km of the centre (150–800\,m$^2$, ground floor,
-cycle access, battery charging). Priority investigation sites include the Quartier
-Gare/former SERNAM site and several underutilised industrial premises
-\citep{interfacetransport2024}.
+Two professional diagnostics frame the local scheme. The 2018 FRETURB-based study
+quantified about \textbf{101,300 goods movements per week} across the agglomeration,
+of which roughly \textbf{2,290~per day occur in the historic centre}; e-commerce
+reached $\approx$\textbf{0.31~parcels/household/week} ($\approx$25,300~weekly
+deliveries, near 20\% of all movements), concentrated on two poles: the dense
+historic core (Centre~Marché, $\approx$510~parcels/week) and the social-housing
+district of Mireuil ($\approx$285~parcels/week) \citep{it2018}. The 2024
+logistics-real-estate study characterised La Rochelle as an ``end-of-line'' market
+with few resident national operators and proposed a hierarchical typology of
+logistics objects \citep{it2024}.
 
 %% ─────────────────────────────────────────────
-\section{Proposed Framework}
+\section{Case Study and Method}
 
-\subsection{Multicriteria Location Criteria}
+The experimentation rests on three EIGSI field projects:
 
-Drawing on the literature and territorial data, we propose nine weighted criteria
-(Table~\ref{tab:criteria}). An eliminating pre-screen removes sites without
-accessible pedestrian routes, safe unloading, or adequate space.
+\textbf{P1 (2021) -- Cargo-bike last mile.} Hyper-centre flow analysis (633~shops,
+38~streets, $\approx$31\% pedestrian zones); comparative CO$_2$ accounting
+(cargo-bike $\approx$13~g/km vs.\ thermal van $\approx$220~g/km) \citep{eigsi2021}.
 
-\begin{table}[h]
-\centering
-\caption{Multicriteria site selection framework}
-\label{tab:criteria}
-\small
-\begin{tabular}{lc}
-\toprule
-\textbf{Criterion} & \textbf{Weight} \\
-\midrule
-B2C/B2B demand potential & 20\% \\
-Walking and cycling accessibility & 15\% \\
-Integration into existing travel chains & 15\% \\
-Operator supply access & 15\% \\
-Network complementarity (gap coverage) & 10\% \\
-Urban integration, safety, accessibility & 10\% \\
-Technical feasibility & 5\% \\
-Land and economic feasibility & 5\% \\
-Territorial and social equity & 5\% \\
-\bottomrule
-\end{tabular}
-\end{table}
+\textbf{P2 (2024) -- Locker and micro-hub siting.} A reproducible GIS
+multicriteria workflow (Python, GeoPandas, Folium): (1)~inventory of
+148~existing collection points (120~relay points/agencies + 9~APLs); (2)~enrichment
+with PT stops (Yélo, 1,414~stops), bike-share and car parks; (3)~five-minute
+walking buffers; (4)~multicriteria ranking: PT proximity $>$ non-cannibalisation $>$
+population/footfall density. Output: \textbf{ten PT-anchored priority sites}
+\citep{eigsi2024}.
 
-\subsection{Site Typology for La Rochelle}
+\textbf{P3 (2025--26) -- VerDelivery + foncier survey.} Consolidation scenario
+(OVO model): peripheral nano-hubs in car parks, light-goods-vehicle supply +
+cargo-bike final leg, assessed on a real carrier (Aunis Messagerie). Companion
+survey: 95~public car parks classified by LGV compatibility (Fig.~\ref{fig:map})
+\citep{eigsi2026}.
 
-Five site types address different demand segments:
-\textit{mobility lockers} (station, bus hubs, park-and-ride);
-\textit{residential lockers} (Mireuil-Europe dense housing);
-\textit{commercial lockers} (supermarkets, markets);
-\textit{relay points} (proximity shops, human service, returns);
-\textit{workplace lockers} (major employers, campus).
-
-\subsection{Integrated Delivery Scheme}
-
-The proposed scheme operates as a hierarchical chain:
-(1) inbound flows are consolidated at a peripheral platform;
-(2) city-bound goods transfer to a micro-hub or EUD near the centre
-(Quartier~Gare/SERNAM);
-(3) the micro-hub sorts by channel and dispatches via cargo cycles or electric
-light vehicles;
-(4) lockers and relay points double as return collection points, enabling
-reverse logistics on outbound tours.
-
-This avoids the key failure mode identified in the literature: deploying lockers
-without upstream consolidation, which produces dedicated carrier runs to individual
-units and cancels density gains.
+\begin{figure}[h]
+  \centering
+  \fbox{\parbox{0.95\columnwidth}{\centering\vspace{2cm}
+    \small\textbf{Figure 1.} Existing collection points (120 relay points, 9 APLs),
+    Yélo network and population density by quartier (EIGSI, 2024).\\[2mm]
+    \textit{[Insert map here]}
+    \vspace{2cm}}}
+  \label{fig:network}
+\end{figure}
 
 %% ─────────────────────────────────────────────
-\section{Conclusion}
+\section{Results}
 
-The impact of PPPs depends less on the technology than on three design choices:
-\textit{where} to locate them (sites that capture existing travel chains);
-\textit{how} to supply them (consolidated from a micro-hub, not by individual
-vans); and \textit{how} to govern them (shared infrastructure, interoperable
-systems, public monitoring).
+\textbf{Coverage gap.} Only 9~APLs versus 120~relay points; lockers cluster in the
+commercial centre and weakly align with the densest residential quartiers. The
+1,414-stop Yélo network provides dense candidate anchors across the demand surface.
 
-For La Rochelle, the 2018 and 2024 data quantify the problem (950 vehicles/day,
-8,640~km/day in the city centre) and identify candidate sites. The proposed
-framework provides a replicable decision-support method applicable to comparable
-European mid-sized cities.
+\textbf{Siting.} Ten PT-integrated, high-footfall, under-served candidate sites
+(railway station, Place de Verdun, university campus, Yélo interchanges), each
+complementary to existing relays and micro-hub candidates. PT-first ranking keeps
+the network legible and travel-chain-aligned.
 
-A reversible pilot combining one micro-hub, two to three locker sites, and
-instrumented cargo-cycle tours is the recommended next step. Evaluation metrics
-should cover operator kilometres, user modal split, fill rates, and full CO$_2$
-balance including retrieval trips.
+\textbf{Locker benchmarks.} $\approx$6,200~parcels/year per unit; PT-station
+lockers (Valencia) saved $\approx$3,937~kgCO$_2$/year each; $\approx$12~g
+CO$_2$/parcel vs.\ $\approx$50~g for van delivery.
+
+\textbf{Land for consolidation is available.} The foncier survey (Fig.~\ref{fig:map})
+classifies 74~surface car parks as micro-hub candidates ($\geq$3~m clearance),
+9~conditional, 12~structured/excluded. Candidates spread from centre to periphery.
+The Espace Encan car park ($\approx$420~spaces) was selected as the VerDelivery
+nano-hub pilot. The ``no land'' objection to urban consolidation does not hold here:
+the binding constraint is governance, not foncier.
+
+\begin{figure}[h]
+  \centering
+  \fbox{\parbox{0.95\columnwidth}{\centering\vspace{2cm}
+    \small\textbf{Figure 2.} 95 public car parks classified by LGV compatibility
+    (74 candidates ≥ 3 m, 9 conditional, 12 excluded) and 10 priority locker sites
+    (PT-anchored, star markers), over population density.
+    Espace Encan = VerDelivery nano-hub pilot. EIGSI, 2025--26.\\[2mm]
+    \textit{[Insert map here]}
+    \vspace{2cm}}}
+  \label{fig:map}
+\end{figure}
+
+\textbf{System-level impact.} Coupling locker siting with nano-hub consolidation
+and cargo-bike distribution yields: $\approx$\textbf{40\% CO$_2$ reduction} over
+five years (236 $\to$ 128~tCO$_2$e); \textbf{44\% cut in truck-kilometres};
+$\approx$\textbf{\euro{}5,505/year} in fuel savings on the Aunis Messagerie
+perimeter \citep{eigsi2026}. Lockers act as demand anchors that pull dispersed home
+deliveries into consolidated, off-peak provisioning and create the volume that
+justifies cargo-bike distribution.
+
+%% ─────────────────────────────────────────────
+\section{Discussion}
+
+\textbf{Siting is the decisive lever.} PT-anchored, density-aware placement
+maximises utilisation and modal-shift potential. Sites chosen for availability alone
+risk cannibalising relay points ($\approx$30\% of host-shop turnover) without net
+system gain. Real barriers persist: home-delivery preference, insufficient network
+density, capital cost (\euro{}1,000/year installed; \euro{}3,000--30,000/unit),
+PMR accessibility, and governance requiring public--private coordination.
+
+The central lesson for mid-sized ``end-of-line'' cities is \textbf{integration}.
+A locker network returns system-level benefits only when co-designed with
+consolidation (nano-/micro-hubs) and local cyclo-logistics. The foncier survey
+reframes the usual objection: with 74~compatible car parks, the land is available;
+the constraint is institutional, not spatial.
+
+%% ─────────────────────────────────────────────
+\section{Conclusion and Perspectives}
+
+This work connects locker siting to system-level impact through two professional
+diagnostics and three years of field experimentation. It offers a transferable GIS
+siting workflow and evidence that PT-anchored siting plus consolidation
+\emph{reshapes} the local scheme rather than merely adding capacity.
+
+Planned extensions: capacitated coverage / p-median optimisation of the ten
+candidate sites; post-deployment utilisation monitoring; full-territory simulation;
+integration into the agglomeration's logistics roadmap and \textit{Schéma Directeur
+des Aires de Livraison}.
+
+%% ─────────────────────────────────────────────
+\paragraph{Data availability.} Collection-point, car-park, PT and population
+datasets and figure-generation scripts are available from the authors.
+
+\paragraph{Author contributions (CRediT).} Conceptualisation: T.G., C.F.\ Data
+curation \& software: R.D., C.F.\ Methodology \& analysis: all. Writing: C.F.\
+Supervision: T.G., J.-P.S.\ \textit{(To be confirmed.)}
+
+\paragraph{AI-usage disclosure.} Drafting assisted by an AI writing tool under
+author supervision; all data, analysis and conclusions are the authors' own.
+
+\paragraph{Conflicts of interest.} None declared.
 
 %% ─────────────────────────────────────────────
 \bibliographystyle{apalike}

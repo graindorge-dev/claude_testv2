@@ -22,3 +22,13 @@
   - articles/city_logistics_lockers_la_rochelle.md
   - outputs/latex/city_logistics_lockers_la_rochelle.tex
   - outputs/latex/city_logistics_lockers_refs.bib
+
+## 2026-06-30 — Mise à jour complète de l'article City Logistics
+**Prompt :** Remplacement par le texte complet de l'abstract étendu (6 sections, données réelles P1/P2/P3 EIGSI) + ajout figure emplacements lockers et micro-hubs
+**Résultat :** Article complet mis à jour, figure SVG/PNG générée (schéma géographique La Rochelle), LaTeX mis à jour avec \includegraphics
+**Fichiers produits :**
+  - articles/city_logistics_lockers_la_rochelle.md (2140 mots, version finale)
+  - outputs/latex/city_logistics_lockers_la_rochelle.tex (LaTeX 2 colonnes avec figure)
+  - outputs/latex/city_logistics_lockers_refs.bib (18 références)
+  - figures/svg/locker_microhub_la_rochelle.svg
+  - figures/png/locker_microhub_la_rochelle.png
