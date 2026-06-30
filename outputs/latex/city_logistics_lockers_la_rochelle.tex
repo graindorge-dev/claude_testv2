@@ -1,0 +1,210 @@
+\documentclass[10pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[top=2cm,bottom=2cm,left=1.8cm,right=1.8cm]{geometry}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{setspace}
+\setlength{\columnsep}{0.6cm}
+
+\title{\textbf{Parcel Lockers and Pickup Points in Urban Logistics:\\
+Location Criteria and Delivery Scheme Design\\
+--- A Case Study of La Rochelle, France}}
+
+\author{[Author Names]\\
+\small EIGSI La Rochelle, France\\
+\small \texttt{[email@eigsi.fr]}}
+
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+%% ─────────────────────────────────────────────
+\section*{Abstract}
+The rapid growth of e-commerce multiplies urban delivery addresses and failed
+delivery attempts. Parcel lockers and pickup points (PPPs) promise to consolidate
+remises and reduce last-kilometre costs. However, their net benefit depends on
+network design, upstream supply chain integration, and recipient access mode. This
+paper proposes a multicriteria location framework and an integrated delivery scheme
+(micro-hub + cargo cycles + PPPs) grounded in the scientific literature and applied
+to La Rochelle, France, using territorial diagnoses of 2018 and 2024. Key findings
+show that site performance is conditional on integration into existing travel chains,
+upstream consolidation via a micro-hub, and cross-operator sharing of infrastructure.
+
+\textbf{Keywords:} parcel lockers; pickup points; urban logistics; last-mile
+delivery; micro-hub; location optimisation; La Rochelle.
+
+%% ─────────────────────────────────────────────
+\section{Introduction}
+
+Home delivery failure rates of 10–30\% generate redundant trips and emissions.
+Parcel lockers and pickup points (PPPs) address this by consolidating deliveries at
+shared access points. Their net impact, however, depends on where they are placed and
+how they are supplied. This paper asks: (1) What criteria determine PPP location
+performance? (2) How should an integrated delivery scheme be designed for a
+medium-sized French city?
+
+We answer by synthesising the scientific literature and applying it to La Rochelle
+(Charente-Maritime, France, $\approx$80,000 inhabitants), drawing on flow data from
+a 2018 FRETURB-based freight diagnosis and spatial recommendations from a 2024
+logistics land study, both produced by Interface Transport for the Community of
+Agglomeration (CdA) of La Rochelle.
+
+%% ─────────────────────────────────────────────
+\section{State of the Art}
+
+\subsection{Consolidation Benefits}
+
+\citet{morganti2014} showed that relay points and lockers developed in France and
+Germany to reduce uncertainty from recipient absence. \citet{iwan2016} demonstrated
+density and productivity gains on the Polish InPost network. \citet{seghezzi2022}
+modelled lower delivery costs versus home delivery in urban contexts, driven by
+increased stop density.
+
+\subsection{Location as a Network Problem}
+
+\citet{deutsch2018} formalised the joint optimisation of number, location, and size
+of lockers. \citet{zhou2024} differentiated home-based users from commuters, showing
+that sites on existing travel chains generate less additional car traffic. \citet{castillo2024}
+demonstrated in Barcelona that micro-hub location and routing must be co-optimised
+for kilometre reduction.
+
+\subsection{User Accessibility}
+
+Acceptability depends on proximity, hours, security, and cycling/walking access
+\citep{kedia2017}. \citet{vakulenko2018} note that lockers transfer logistics work
+to the consumer. \citet{mehmood2022} found that $>$71\% of Nanjing locker sites
+were primarily car-accessible, flagging the limits of distance-only analysis.
+
+\subsection{Conditional Environmental Benefit}
+
+\citet{schnieder2021} show that the emission balance is sensitive to recipient travel
+mode. \citet{gutenschwager2024} stress adding operator tours and retrieval trips.
+\citet{silva2023}, reviewing 102 papers, confirm benefits in distance and failed
+deliveries but highlight dedicated car trips as a recurrent risk. \citet{ghazal2025},
+modelling Aachen, found that a combined scenario (electric vehicles + lockers +
+relays) reduced costs by $\geq$5.4\% and CO$_2$ by $\geq$61.1\%. \citet{pinchasik2025}
+corroborate cost, traffic, and emission reductions for expanded locker use in the
+Greater Oslo area.
+
+\subsection{Micro-Hubs and Cargo Cycles}
+
+\citet{katsela2022}, analysing 17 European and North American cases, show that
+micro-hubs are a family of transhipment interfaces whose success depends on
+stakeholder organisation and local context. They enable cargo-cycle distribution in
+dense zones, provided sufficient volume and cross-operator cooperation are secured.
+
+%% ─────────────────────────────────────────────
+\section{Case Study: La Rochelle}
+
+\subsection{Territorial Context}
+
+La Rochelle is a mid-sized coastal city with a historic centre, a summer tourism
+peak, and a CdA of $\approx$200,000 inhabitants. The city has invested in cycling
+infrastructure and aims to reduce urban freight externalities.
+
+\subsection{2018 Freight Diagnosis}
+
+The FRETURB model estimates \textbf{101,325 weekly B2B movements} across the CdA,
+of which \textbf{49,898} concern La Rochelle and \textbf{12,126} the city centre.
+E-commerce adds \textbf{25,300 weekly deliveries} at CdA level, $\approx$\textbf{2,000
+per week in the city centre}. Approximately \textbf{950 freight vehicles} access the
+city centre daily, covering $\approx$\textbf{8,640 km/day} (780 vehicles
+$<$3.5\,t; 170 heavy vehicles). Two demand poles emerge: the dense
+\textit{Centre~Marché} sector and the collective housing zone of
+\textit{Mireuil-Europe} \citep{interfacetransport2018}.
+
+\subsection{2024 Logistics Land Study}
+
+The 2024 study translates flows into spatial needs to 2040. It proposes a
+hierarchical network: peripheral urban distribution platforms, urban distribution
+spaces (EUD, 150\,m$^2$ to several thousand m$^2$) in the city core, and
+cycle-logistics hubs within 2\,km of the centre (150–800\,m$^2$, ground floor,
+cycle access, battery charging). Priority investigation sites include the Quartier
+Gare/former SERNAM site and several underutilised industrial premises
+\citep{interfacetransport2024}.
+
+%% ─────────────────────────────────────────────
+\section{Proposed Framework}
+
+\subsection{Multicriteria Location Criteria}
+
+Drawing on the literature and territorial data, we propose nine weighted criteria
+(Table~\ref{tab:criteria}). An eliminating pre-screen removes sites without
+accessible pedestrian routes, safe unloading, or adequate space.
+
+\begin{table}[h]
+\centering
+\caption{Multicriteria site selection framework}
+\label{tab:criteria}
+\small
+\begin{tabular}{lc}
+\toprule
+\textbf{Criterion} & \textbf{Weight} \\
+\midrule
+B2C/B2B demand potential & 20\% \\
+Walking and cycling accessibility & 15\% \\
+Integration into existing travel chains & 15\% \\
+Operator supply access & 15\% \\
+Network complementarity (gap coverage) & 10\% \\
+Urban integration, safety, accessibility & 10\% \\
+Technical feasibility & 5\% \\
+Land and economic feasibility & 5\% \\
+Territorial and social equity & 5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Site Typology for La Rochelle}
+
+Five site types address different demand segments:
+\textit{mobility lockers} (station, bus hubs, park-and-ride);
+\textit{residential lockers} (Mireuil-Europe dense housing);
+\textit{commercial lockers} (supermarkets, markets);
+\textit{relay points} (proximity shops, human service, returns);
+\textit{workplace lockers} (major employers, campus).
+
+\subsection{Integrated Delivery Scheme}
+
+The proposed scheme operates as a hierarchical chain:
+(1) inbound flows are consolidated at a peripheral platform;
+(2) city-bound goods transfer to a micro-hub or EUD near the centre
+(Quartier~Gare/SERNAM);
+(3) the micro-hub sorts by channel and dispatches via cargo cycles or electric
+light vehicles;
+(4) lockers and relay points double as return collection points, enabling
+reverse logistics on outbound tours.
+
+This avoids the key failure mode identified in the literature: deploying lockers
+without upstream consolidation, which produces dedicated carrier runs to individual
+units and cancels density gains.
+
+%% ─────────────────────────────────────────────
+\section{Conclusion}
+
+The impact of PPPs depends less on the technology than on three design choices:
+\textit{where} to locate them (sites that capture existing travel chains);
+\textit{how} to supply them (consolidated from a micro-hub, not by individual
+vans); and \textit{how} to govern them (shared infrastructure, interoperable
+systems, public monitoring).
+
+For La Rochelle, the 2018 and 2024 data quantify the problem (950 vehicles/day,
+8,640~km/day in the city centre) and identify candidate sites. The proposed
+framework provides a replicable decision-support method applicable to comparable
+European mid-sized cities.
+
+A reversible pilot combining one micro-hub, two to three locker sites, and
+instrumented cargo-cycle tours is the recommended next step. Evaluation metrics
+should cover operator kilometres, user modal split, fill rates, and full CO$_2$
+balance including retrieval trips.
+
+%% ─────────────────────────────────────────────
+\bibliographystyle{apalike}
+\bibliography{city_logistics_lockers_refs}
+
+\end{document}

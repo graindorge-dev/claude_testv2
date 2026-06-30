@@ -28,3 +28,15 @@
 | Date | Direction | Statut | Observations |
 |------|-----------|--------|--------------|
 | 2026-06-30 | Test installation : plan article IA + enseignement supérieur | Complété | Plan 3 chapitres généré dans articles/test_installation.md |
+
+## 2026-06-30 — Article City Logistics : Lockers & Logistique Urbaine à La Rochelle
+| Date | Direction | Statut | Observations |
+|------|-----------|--------|--------------|
+| 2026-06-30 | Rédaction abstract étendu 3 pages City Logistics (EN) | Complété | Article intégrant état de l'art TR + données La Rochelle 2018/2024 |
+
+## Choix effectués (suite)
+| Date | Décision | Justification | Alternatives écartées |
+|------|----------|---------------|-----------------------|
+| 2026-06-30 | Structure IMRaD adaptée en 5 sections | Format standard City Logistics | Plan chronologique |
+| 2026-06-30 | 16 références scientifiques incluses + 2 rapports terrain | Couverture complète TR + données locales | Références seules |
+| 2026-06-30 | Schéma hiérarchique micro-hub → lockers → vélo-cargo | Évite les tournées dédiées aux lockers isolés | Lockers seuls |
