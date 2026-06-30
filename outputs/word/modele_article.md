@@ -1,43 +1,39 @@
 ---
-title: "Your Paper Title Here"
-author: "Author Name — Affiliation"
-date: "2026-06-29"
+title: "Article Title"
+author: "Author Name — Institution"
+date: "2026-06-30"
 abstract: |
-  A 150–250 word summary: context, gap, method, key result, and contribution.
-  (Article language: English, per your preferences.)
+  Write your abstract here (150–250 words). Summarise background,
+  objective, methods, results, and conclusions.
+keywords: "keyword1, keyword2, keyword3"
 ---
 
-<!--
-  Word / DOCX starter — ARS v3.13.0
-  This Markdown file converts to .docx via Pandoc.
-  ➜  Ask Claude: "convertis cet article en Word"
-     The .docx will be produced in outputs/word/.
--->
-
 # Introduction
-<!-- Background, problem statement, research question, and contribution. -->
 
-# Methods
-<!-- Data, materials, procedure, and analysis — enough detail to reproduce. -->
+<!-- Background and context. Research gap and problem statement.
+     Objectives and research questions. Structure of the paper. -->
+
+# Literature Review
+
+<!-- State of the art. Key theories and models.
+     Identified gaps your work addresses. -->
+
+# Methodology
+
+<!-- Study area and data sources. Methods and tools. Validation approach. -->
 
 # Results
-<!-- Findings only (no interpretation). Reference figures and tables below. -->
 
-<!-- Inserting a figure: use the PNG version (300 dpi) for Word. -->
-![Short, self-contained caption describing the figure.](../../figures/png/example_figure.png)
-
-| Condition | Mean | SD   |
-|-----------|------|------|
-| A         | 0.00 | 0.00 |
-| B         | 0.00 | 0.00 |
-
-Table: Example table.
+<!-- Present your findings. Insert figures as: ![Caption](../../figures/png/figure1.png) -->
 
 # Discussion
-<!-- Interpretation, limitations, implications, and future work. -->
+
+<!-- Interpret results. Compare with existing literature. Limitations. -->
 
 # Conclusion
-<!-- One paragraph: what was learned and why it matters. -->
+
+<!-- Summary of contributions. Practical implications. Future research. -->
 
 # References
-<!-- List references here, or link a .bib file when exporting via Pandoc. -->
+
+<!-- Note : Ask Claude "Convert this article to Word" to get the .docx file in outputs/word/ -->

@@ -1,85 +1,85 @@
-% ============================================================
-%  Modèle de départ Overleaf — ARS v3.13.0
-%  Langue de l'article : English (per user preferences)
-% ============================================================
-\documentclass[12pt]{article}
-
-% --- Encoding & language --------------------------------------
-\usepackage[utf8]{inputenc}     % UTF-8 source encoding
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[english]{babel}      % article language = English
-
-% --- Layout: 2.5cm margins, double spacing --------------------
+\usepackage[english]{babel}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{setspace}
 \doublespacing
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{natbib}
 
-% --- Required packages ----------------------------------------
-\usepackage{graphicx}   % figures
-\usepackage{float}      % [H] float placement
-\usepackage{booktabs}   % publication-quality tables
-\usepackage{hyperref}   % clickable links / refs
-\usepackage[round]{natbib} % author-year citations
-
-\title{Your Paper Title Here}
-\author{Author Name\\ \small Affiliation, email@institution}
+\title{Article Title}
+\author{Author Name \\ \small Institution \\ \small \texttt{email@institution.edu}}
 \date{\today}
 
 \begin{document}
+
 \maketitle
 
-% ============================================================
-%  IMRaD structure (Introduction, Methods, Results, Discussion)
-% ============================================================
-
 \begin{abstract}
-% A 150–250 word summary: context, gap, method, key result, contribution.
+% Write your abstract here (150-250 words).
+% Summarise background, objective, methods, results, and conclusions.
 \end{abstract}
 
+\textbf{Keywords:} keyword1, keyword2, keyword3
+
+% ============================================================
+% INTRODUCTION
+% ============================================================
 \section{Introduction}
-% Background, problem statement, research question, and contribution.
-% Example citation: prior work shows X \citep{smith2023}.
+% Background and context.
+% Research gap and problem statement.
+% Objectives and research questions.
+% Structure of the paper.
 
-\section{Methods}
-% Data, materials, procedure, and analysis — enough detail to reproduce.
+% ============================================================
+% LITERATURE REVIEW / THEORETICAL FRAMEWORK
+% ============================================================
+\section{Literature Review}
+% State of the art.
+% Key theories and models.
+% Identified gaps your work addresses.
 
+% ============================================================
+% METHODOLOGY
+% ============================================================
+\section{Methodology}
+% Study area and data sources.
+% Methods and tools.
+% Validation approach.
+
+% ============================================================
+% RESULTS
+% ============================================================
 \section{Results}
-% Findings only (no interpretation). Reference figures and tables.
+% Present your findings.
+% Example figure insertion:
+% \begin{figure}[H]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{../../figures/png/figure1.png}
+%   \caption{Caption text.}
+%   \label{fig:fig1}
+% \end{figure}
 
-% --- Example: inserting a figure from ../../figures/ ----------
-% IMPORTANT: reference the PNG version (300 dpi) for portability.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\linewidth]{../../figures/png/example_figure.png}
-    \caption{Short, self-contained caption describing the figure.}
-    \label{fig:example}
-\end{figure}
-% (A vector .svg twin lives in ../../figures/svg/ for publication.)
-
-% --- Example: a simple booktabs table ------------------------
-\begin{table}[H]
-    \centering
-    \caption{Example table.}
-    \label{tab:example}
-    \begin{tabular}{lcc}
-        \toprule
-        Condition & Mean & SD \\
-        \midrule
-        A & 0.00 & 0.00 \\
-        B & 0.00 & 0.00 \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
+% ============================================================
+% DISCUSSION
+% ============================================================
 \section{Discussion}
-% Interpretation, limitations, implications, and future work.
+% Interpret results.
+% Compare with existing literature.
+% Limitations.
 
+% ============================================================
+% CONCLUSION
+% ============================================================
 \section{Conclusion}
-% One paragraph: what was learned and why it matters.
+% Summary of contributions.
+% Practical implications.
+% Future research directions.
 
-% ============================================================
-%  Bibliography
-% ============================================================
 \bibliographystyle{apalike}
 \bibliography{exemple}
 
