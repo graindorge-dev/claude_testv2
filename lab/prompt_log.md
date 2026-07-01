@@ -47,5 +47,10 @@
 **Résultat :** Figure 1 à deux panneaux — (a) siting lockers (bus/relais/lockers) + (b) foncier micro-hubs (parkings verts/jaunes/gris, Encan) — même emprise, fond population partagé + colorbar, légendes titrées. Remplace les 2 figures séparées dans l'article ; renvois Fig. 1a/1b. LaTeX (figure*) + DOCX régénérés.
 **Fichiers :** figures/png|svg/larochelle_two_experiments.*, code/make_two_experiments_map.py, articles/…md, outputs/latex/…tex, outputs/word/…docx
 
+## 2026-07-01 — Plan (full paper) + vérif. biblio + condensation 3 pages
+**Prompt :** Lancer /ars-plan avec l'existant ; puis rappel des guidelines (extended abstract = 3 pages, échéance 15/07/2026).
+**Résultat :** Mode plan → Chapter Plan du full paper (9 p., étape novembre) esquissé ; décisions auteur : positionnement **méthodologique**, optimisation **en perspective**, **recherche biblio à faire**. Recherche web → 4 réfs externes vérifiées (DOI) : Iwan 2016 (Transp Res Procedia), Deutsch & Golany 2018 (IJPR), Lachapelle 2018 (JTG), Bovkir 2025 (Land Use Policy). `[verify]` supprimés. Extended abstract **condensé à 3 pages** (corps ~1 400 mots) ; SoA recadré méthodo.
+**Fichiers modifiés :** articles/…md, outputs/latex/…tex, outputs/word/…docx
+
 ---
 *(Les prochains échanges seront ajoutés ici automatiquement)*
