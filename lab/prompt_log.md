@@ -42,5 +42,10 @@
 **Résultat :** 95 parkings classés par compatibilité véhicules (74 surface ≥3 m = candidats micro-hub, 9 conditionnels, 12 ouvrages exclus ; Espace Encan = pilote). Figure 2 générée (SVG+PNG 300 dpi). Article enrichi (abstract, méthode P3, résultats « Land for consolidation », discussion, table) via le pipeline academic-paper. LaTeX + DOCX régénérés (2 figures embarquées).
 **Fichiers produits/modifiés :** figures/png|svg/larochelle_microhub_parkings.*, code/make_microhub_map.py, data/raw/Parkings.xlsx, articles/…md, outputs/latex/…tex, outputs/word/…docx
 
+## 2026-06-29 — Planche unique deux panneaux (deux expériences)
+**Prompt :** Une carte pour les deux expériences, claire et bien légendée.
+**Résultat :** Figure 1 à deux panneaux — (a) siting lockers (bus/relais/lockers) + (b) foncier micro-hubs (parkings verts/jaunes/gris, Encan) — même emprise, fond population partagé + colorbar, légendes titrées. Remplace les 2 figures séparées dans l'article ; renvois Fig. 1a/1b. LaTeX (figure*) + DOCX régénérés.
+**Fichiers :** figures/png|svg/larochelle_two_experiments.*, code/make_two_experiments_map.py, articles/…md, outputs/latex/…tex, outputs/word/…docx
+
 ---
 *(Les prochains échanges seront ajoutés ici automatiquement)*
